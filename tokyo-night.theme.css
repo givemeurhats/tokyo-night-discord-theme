@@ -1,7 +1,7 @@
 /**
  * @name tokyo-night-hybrid
  * @description A dark Discord theme inspired by Tokyo Night VS Code theme.
- * @author original by refact0r, modified for Tokyo Night
+ * @author original by refact0r, modified by givemeurhats
  * @version 1.0.0
  * @website https://github.com/ashtrath/Tokyo-Night
  * @source https://github.com/ashtrath/Tokyo-Night
@@ -12,326 +12,425 @@
 
 body {
   /* font options */
-  --font: 'figtree'; /* change to '' for default discord font */
-  --code-font: ''; /* change to '' for default discord font */
-  font-weight: 400; /* normal text font weight. DOES NOT AFFECT BOLD TEXT */
+  --font: 'figtree';
+  /* change to '' for default discord font */
+  --code-font: '';
+  /* change to '' for default discord font */
+  font-weight: 400;
+  /* normal text font weight. DOES NOT AFFECT BOLD TEXT */
 
   /* sizes */
-  --gap: 12px; /* spacing between panels */
-  --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
-  --border-thickness: 1px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+  --gap: 12px;
+  /* spacing between panels */
+  --divider-thickness: 4px;
+  /* thickness of unread messages divider and highlighted message borders */
+  --border-thickness: 1px;
+  /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
 
   /* animation/transition options */
-  --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
-  --list-item-transition: 0.2s ease; /* transition for list items */
-  --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
-  --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+  --animations: on;
+  /* off: disable animations/transitions, on: enable animations/transitions */
+  --list-item-transition: 0.2s ease;
+  /* transition for list items */
+  --dms-icon-svg-transition: 0.4s ease;
+  /* transition for the dms icon */
+  --border-hover-transition: 0.2s ease;
+  /* transition for borders when hovered */
 
   /* top bar options */
-  --top-bar-height: var(--gap); /* height of the top bar */
-  --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
-  --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
-  --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
+  --top-bar-height: var(--gap);
+  /* height of the top bar */
+  --top-bar-button-position: titlebar;
+  /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+  --top-bar-title-position: off;
+  /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+  --subtle-top-bar-title: off;
+  /* off: default, on: hide the icon and use subtle text color (like old discord) */
 
   /* window controls */
-  --custom-window-controls: on; /* off: default window controls, on: custom window controls */
-  --window-control-size: 14px; /* size of custom window controls */
+  --custom-window-controls: on;
+  /* off: default window controls, on: custom window controls */
+  --window-control-size: 14px;
+  /* size of custom window controls */
 
   /* dms button options */
-  --custom-dms-icon: custom; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
-  --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* icon svg url. MUST BE A SVG. */
-  --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
-  --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
-  --dms-icon-color-after: var(
-    --white
-  ); /* icon color when button is hovered/selected */
-  --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
-  --dms-background-image-url: url(''); /* url of the background image */
-  --dms-background-image-size: cover; /* size of the background image (css background-size property) */
-  --dms-background-color: linear-gradient(
-    70deg,
-    var(--blue-2),
-    var(--purple-2),
-    var(--red-2)
-  ); /* fixed color/gradient (css background property) */
+  --custom-dms-icon: custom;
+  /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+  --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg');
+  /* icon svg url. MUST BE A SVG. */
+  --dms-icon-svg-size: 80%;
+  /* size of the svg (css mask-size property) */
+  --dms-icon-color-before: var(--brightBlack);
+  /* normal icon color */
+  --dms-icon-color-after: var(--brightWhite);
+  /* icon color when button is hovered/selected */
+  --custom-dms-background: off;
+  /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+  --dms-background-image-url: url('');
+  /* url of the background image */
+  --dms-background-image-size: cover;
+  /* size of the background image (css background-size property) */
+  --dms-background-color: linear-gradient(70deg,
+      var(--blue),
+      var(--purple),
+      var(--red));
+  /* fixed color/gradient (css background property) */
 
   /* background image options */
-  --background-image: off; /* off: no background image, on: enable background image (must set url variable below) */
-  --background-image-url: url(''); /* url of the background image */
+  --background-image: off;
+  /* off: no background image, on: enable background image (must set url variable below) */
+  --background-image-url: url('');
+  /* url of the background image */
 
   /* transparency/blur options */
   /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
-  --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
-  --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
-  --panel-blur: off; /* off: no changes, on: blur the background of panels */
-  --blur-amount: 12px; /* amount of blur */
-  --bg-floating: var(
-    --bg-3
-  ); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
+  --transparency-tweaks: off;
+  /* off: no changes, on: remove some elements for better transparency */
+  --remove-bg-layer: off;
+  /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
+  --panel-blur: off;
+  /* off: no changes, on: blur the background of panels */
+  --blur-amount: 12px;
+  /* amount of blur */
+  --bg-floating: var(--bg-3);
+  /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
 
   /* chatbar options */
-  --custom-chatbar: aligned; /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
-  --chatbar-height: 47px; /* height of the chatbar (52px by default, 47px recommended for aligned, 56px recommended for separated) */
-  --chatbar-padding: 8px; /* padding of the chatbar. only applies in aligned mode. */
+  --custom-chatbar: aligned;
+  /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
+  --chatbar-height: 47px;
+  /* height of the chatbar (52px by default, 47px recommended for aligned, 56px recommended for separated) */
+  --chatbar-padding: 8px;
+  /* padding of the chatbar. only applies in aligned mode. */
 
   /* other options */
-  --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+  --small-user-panel: on;
+  /* off: default user panel, on: smaller user panel like in old discord */
 }
 
-/* Tokyo Night colors converted from the VS Code theme */
+/* Tokyo Night colors */
 :root {
-  --colors: on; /* off: discord default colors, on: custom colors */
+  /* Base colors */
+  --background: #181925;
+  --black: #414868;
+  --blue: #7AA2F7;
+  --brightBlack: #414868;
+  --brightBlue: #7AA2F7;
+  --brightCyan: #7DCFFF;
+  --brightGreen: #73DACA;
+  --brightPurple: #BB9AF7;
+  --brightRed: #F7768E;
+  --brightWhite: #C0CAF5;
+  --brightYellow: #E0AF68;
+  --cursorColor: #C0CAF5;
+  --cyan: #7DCFFF;
+  --foreground: #A9B1DC;
+  --green: #73DACA;
+  --purple: #BB9AF7;
+  --red: #F7768E;
+  --selectionBackground: #28344A;
+  --white: #C0CAF5;
+  --yellow: #E0AF68;
 
-  /* text colors */
-  --text-0: var(--bg-4); /* text on colored elements */
-  --text-1: hsl(
-    222,
-    75%,
-    95%
-  ); /* other normally white text - based on c0caf5 */
-  --text-2: hsl(
-    228,
-    31%,
-    70%
-  ); /* headings and important text - based on a9b1d6 */
-  --text-3: hsl(230, 21%, 65%); /* normal text - based on 9aa5ce */
-  --text-4: hsl(
-    234,
-    14%,
-    53%
-  ); /* icon buttons and channels - based on 787c99 */
-  --text-5: hsl(
-    233,
-    14%,
-    40%
-  ); /* muted channels/chats and timestamps - based on 565f89 */
+  /* Text colors */
+  --text-0: var(--white);
+  /* text on colored elements */
+  --text-1: var(--brightWhite);
+  /* normally white text */
+  --text-2: var(--foreground);
+  /* headings and important text */
+  --text-3: var(--foreground);
+  /* normal text */
+  --text-4: var(--black);
+  /* icon buttons and channels */
+  --text-5: var(--black);
+  /* muted channels/chats and timestamps */
 
-  /* background and dark colors */
-  --bg-1: hsla(
-    235,
-    18%,
-    20%,
-    1
-  ); /* dark buttons when clicked - based on 232433 */
-  --bg-2: hsla(235, 22%, 16%, 1); /* dark buttons - based on 16161e */
-  --bg-3: hsla(
-    235,
-    22%,
-    13%,
-    1
-  ); /* spacing, secondary elements - based on 1a1b26 */
-  --bg-4: hsla(235, 23%, 10%, 1); /* main background color - based on 13131a */
-  --hover: hsla(235, 23%, 25%, 0.1); /* channels and buttons when hovered */
-  --active: hsla(
-    235,
-    23%,
-    27%,
-    0.2
-  ); /* channels and buttons when clicked or selected */
-  --active-2: hsla(
-    235,
-    23%,
-    29%,
-    0.3
-  ); /* extra state for transparent buttons */
-  --message-hover: hsla(235, 23%, 15%, 0.1); /* messages when hovered */
+  /* Background and dark colors */
+  --bg-1: var(--black);
+  /* dark buttons when clicked */
+  --bg-2: var(--selectionBackground);
+  /* dark buttons */
+  --bg-3: var(--background);
+  /* spacing, secondary elements */
+  --bg-4: var(--background);
+  /* main background color */
+  --hover: rgba(40, 52, 74, 0.1);
+  /* hover states */
+  --active: rgba(40, 52, 74, 0.2);
+  /* active/select states */
+  --active-2: rgba(40, 52, 74, 0.3);
+  /* extra active state */
+  --message-hover: rgba(40, 52, 74, 0.1);
+  /* message hover */
 
-  /* accent colors - based on Tokyo Night VS code theme */
-  --accent-1: var(--blue-1); /* links and other accent text */
-  --accent-2: var(--blue-2); /* small accent elements */
-  --accent-3: var(--blue-3); /* accent buttons */
-  --accent-4: var(--blue-4); /* accent buttons when hovered */
-  --accent-5: var(--blue-5); /* accent buttons when clicked */
-  --accent-new: var(
-    --accent-2
-  ); /* stuff that's normally red like mute/deafen buttons */
-  --mention: linear-gradient(
-    to right,
-    color-mix(in hsl, var(--accent-2), transparent 90%) 40%,
-    transparent
-  ); /* background of messages that mention you */
-  --mention-hover: linear-gradient(
-    to right,
-    color-mix(in hsl, var(--accent-2), transparent 95%) 40%,
-    transparent
-  ); /* background of messages that mention you when hovered */
-  --reply: linear-gradient(
-    to right,
-    color-mix(in hsl, var(--text-3), transparent 90%) 40%,
-    transparent
-  ); /* background of messages that reply to you */
-  --reply-hover: linear-gradient(
-    to right,
-    color-mix(in hsl, var(--text-3), transparent 95%) 40%,
-    transparent
-  ); /* background of messages that reply to you when hovered */
+  /* Accent colors */
+  --accent-1: var(--blue);
+  /* links and accents */
+  --accent-2: var(--brightBlue);
+  /* small accents */
+  --accent-3: #5E88FF;
+  /* custom accent button (optional tweak) */
+  --accent-4: #82A9FF;
+  /* accent hover */
+  --accent-5: #4F75FF;
+  /* accent click */
+  --accent-new: var(--brightBlue);
 
-  /* status indicator colors - match VS Code Tokyo Night */
-  --online: var(--green-2); /* based on 73daca */
-  --dnd: var(--red-2); /* based on f7768e */
-  --idle: var(--yellow-2); /* based on e0af68 */
-  --streaming: var(--purple-2); /* based on bb9af7 */
-  --offline: var(--text-4); /* based on 787c99 */
+  --mention: linear-gradient(to right, rgba(122, 162, 247, 0.1) 40%, transparent);
+  --mention-hover: linear-gradient(to right, rgba(122, 162, 247, 0.05) 40%, transparent);
+  --reply: linear-gradient(to right, rgba(169, 177, 220, 0.1) 40%, transparent);
+  --reply-hover: linear-gradient(to right, rgba(169, 177, 220, 0.05) 40%, transparent);
 
-  /* border colors */
-  --border-light: var(--hover); /* general light border color */
-  --border: var(--active); /* general normal border color */
-  --border-hover: var(--active); /* border color of panels when hovered */
-  --button-border: hsl(
-    228,
-    20%,
-    25%,
-    0.1
-  ); /* neutral border color of buttons */
+  /* Status colors */
+  --online: var(--brightGreen);
+  --dnd: var(--brightRed);
+  --idle: var(--brightYellow);
+  --streaming: var(--brightPurple);
+  --offline: var(--black);
 
-  /* base colors - Tokyo Night color palette */
-  --red-1: hsl(348, 90%, 71%); /* based on f7768e */
-  --red-2: hsl(348, 90%, 66%);
-  --red-3: hsl(348, 90%, 61%);
-  --red-4: hsl(348, 90%, 56%);
-  --red-5: hsl(348, 90%, 51%);
-
-  --green-1: hsl(158, 56%, 65%); /* based on 73daca */
-  --green-2: hsl(158, 56%, 60%);
-  --green-3: hsl(158, 56%, 55%);
-  --green-4: hsl(158, 56%, 50%);
-  --green-5: hsl(158, 56%, 45%);
-
-  --blue-1: hsl(223, 89%, 71%); /* based on 7aa2f7 */
-  --blue-2: hsl(223, 89%, 66%);
-  --blue-3: hsl(223, 89%, 61%);
-  --blue-4: hsl(223, 89%, 56%);
-  --blue-5: hsl(223, 89%, 51%);
-
-  --yellow-1: hsl(35, 70%, 65%); /* based on e0af68 */
-  --yellow-2: hsl(35, 70%, 60%);
-  --yellow-3: hsl(35, 70%, 55%);
-  --yellow-4: hsl(35, 70%, 50%);
-  --yellow-5: hsl(35, 70%, 45%);
-
-  --purple-1: hsl(267, 84%, 71%); /* based on bb9af7 */
-  --purple-2: hsl(267, 84%, 66%);
-  --purple-3: hsl(267, 84%, 61%);
-  --purple-4: hsl(267, 84%, 56%);
-  --purple-5: hsl(267, 84%, 51%);
-
-  /* Extra colors from Tokyo Night VS Code theme */
-  --cyan-1: hsl(191, 97%, 65%); /* based on 7dcfff */
-  --cyan-2: hsl(191, 97%, 60%);
-  --cyan-3: hsl(191, 97%, 55%);
-  --cyan-4: hsl(191, 97%, 50%);
-  --cyan-5: hsl(191, 97%, 45%);
+  /* Border colors */
+  --border-light: var(--hover);
+  --border: var(--active);
+  --border-hover: var(--active);
+  --button-border: rgba(122, 162, 247, 0.1);
 }
-
-/* Additional Tokyo Night style customizations */
 
 /* Improve readability of code blocks - mimic Tokyo Night code highlighting */
 code,
 pre {
-  background-color: hsla(235, 23%, 8%, 1) !important;
-  border-color: hsla(235, 22%, 16%, 1) !important;
+  background-color: #13131A !important;
+  /* dark background (#181925 but a bit darker) */
+  border-color: #28344A !important;
+  /* selectionBackground */
+  color: var(--foreground) !important;
 }
 
 /* Custom scrollbar to match Tokyo Night */
 ::-webkit-scrollbar {
-  width: 8px !important;
-  height: 8px !important;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent !important;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: hsla(235, 23%, 25%, 0.3) !important;
-  border-radius: 4px !important;
+  background-color: var(--brightBlack);
+  border-radius: 4px;
+  border: 2px solid var(--background);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: hsla(235, 23%, 30%, 0.5) !important;
+  background-color: var(--brightBlue);
 }
 
-/* Add a subtle border to panels for Tokyo Night-like separation */
-.container-3w7J-x,
-.panels-j1Uci_,
-.sidebar-2K8pFh,
-.scroller-2LSbBU {
-  border-color: hsla(235, 23%, 15%, 0.8) !important;
+/* Button styling */
+button {
+  background-color: var(--bg-2);
+  border: 1px solid var(--button-border);
+  color: var(--text-1);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Button and interactive element highlights using Tokyo Night colors */
-.button-1YfofN:hover,
-.colorable-1bkp8v.primaryDark-3mSFDl:hover {
-  background-color: var(--blue-3) !important;
+button:hover {
+  background-color: var(--bg-1);
+  border-color: var(--accent-2);
+  color: var(--brightWhite);
 }
 
-/* Improved channel list styling */
-.name-23GUGE {
-  color: var(--text-4) !important;
-}
-.name-23GUGE:hover,
-.selected-aXhQR6 .name-23GUGE {
-  color: var(--text-2) !important;
+/* Link styling */
+a {
+  color: var(--accent-1);
+  text-decoration: none;
 }
 
-/* Server list styling */
-.wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9,
-.wrapper-1BJsBx:hover .childWrapper-anI2G9 {
-  background-color: var(--blue-2) !important;
-  color: var(--text-1) !important;
+a:hover {
+  color: var(--brightBlue);
+  text-decoration: underline;
 }
 
-/* Typography tweaks for better readability */
-.markup-2BOw-j {
-  line-height: 1.5em !important;
+/* Text selection */
+::selection {
+  background: var(--selectionBackground);
+  color: var(--brightWhite);
 }
 
-/* Improve highlight colors for mentions and code */
+/* Highlight mention backgrounds */
 .mention {
-  background-color: hsla(223, 89%, 66%, 0.3) !important;
-  color: var(--blue-1) !important;
+  background: var(--mention);
 }
 
-.hljs-comment,
-.hljs-quote {
-  color: hsl(233, 14%, 40%) !important; /* Based on 565f89 */
+.mention:hover {
+  background: var(--mention-hover);
 }
 
-.hljs-variable,
-.hljs-template-variable,
-.hljs-attribute,
-.hljs-tag,
-.hljs-name,
-.hljs-regexp,
-.hljs-link,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class {
-  color: var(--red-2) !important;
+/* Highlight replies */
+.reply {
+  background: var(--reply);
 }
 
-.hljs-number,
-.hljs-meta,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params {
-  color: var(--yellow-2) !important;
+.reply:hover {
+  background: var(--reply-hover);
 }
 
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet {
-  color: var(--green-2) !important;
+/* Cursor color */
+.cursor {
+  color: var(--cursorColor);
 }
 
-.hljs-title,
-.hljs-section {
-  color: var(--blue-2) !important;
+/* Status indicators */
+.status-online {
+  background-color: var(--online);
 }
 
-.hljs-keyword,
-.hljs-selector-tag {
-  color: var(--purple-2) !important;
+.status-dnd {
+  background-color: var(--dnd);
+}
+
+.status-idle {
+  background-color: var(--idle);
+}
+
+.status-streaming {
+  background-color: var(--streaming);
+}
+
+.status-offline {
+  background-color: var(--offline);
+}
+
+/* Main container backgrounds */
+.app-contents {
+  background-color: var(--bg-4);
+  color: var(--text-3);
+}
+
+/* Panels and sidebars */
+.sidebar,
+.channel-list,
+.dm-list {
+  background-color: var(--bg-3);
+  border-right: 1px solid var(--border);
+}
+
+/* Hover effects */
+.sidebar-item:hover,
+.channel:hover,
+.dm:hover {
+  background-color: var(--hover);
+  transition: background-color 0.2s ease;
+}
+
+/* Selected item */
+.sidebar-item.selected,
+.channel.selected,
+.dm.selected {
+  background-color: var(--active);
+  border-left: var(--divider-thickness) solid var(--accent-1);
+  color: var(--brightWhite);
+}
+
+/* User panel */
+.user-panel {
+  background-color: var(--bg-2);
+  color: var(--text-1);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Chat input */
+.chat-input {
+  background-color: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--text-1);
+}
+
+.chat-input:focus {
+  border-color: var(--accent-1);
+  box-shadow: 0 0 8px var(--accent-2);
+}
+
+/* Message hover */
+.message:hover {
+  background-color: var(--message-hover);
+  transition: background-color 0.2s ease;
+}
+
+/* Message author name */
+.message-author {
+  color: var(--accent-1);
+}
+
+/* Timestamp */
+.message-timestamp {
+  color: var(--text-5);
+  font-size: 0.75em;
+}
+
+/* Divider */
+.divider {
+  border-top: var(--divider-thickness) solid var(--border);
+  margin: 12px 0;
+}
+
+/* Miscellaneous tweaks */
+::-webkit-input-placeholder {
+  color: var(--brightBlack);
+}
+
+div[data-windows="true"] {
+  height: 12px !important;
+  /* adjust as needed */
+  min-height: 12px !important;
+}
+
+/* Hide Minimize and Maximize buttons under the windows container */
+div[data-windows="true"] [aria-label="Minimize"],
+div[data-windows="true"] [aria-label="Maximize"] {
+  display: none !important;
+}
+
+/* Fix close button theme */
+div[data-windows="true"] [aria-label="Close"] {
+  margin-top: -5px;
+  margin-right: -18px;
+  position: relative;
+}
+
+div[data-windows="true"] [aria-label="Close"]::after {
+  background-color: #414868 !important;
+  /* default gray circle */
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  position: relative;
+}
+
+/* inner dot (black), hidden by default */
+div[data-windows="true"] [aria-label="Close"]::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #181925;
+  /* black dot */
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* red hover outer + show inner */
+div[data-windows="true"] [aria-label="Close"]:hover::after {
+  background-color: #F7768E !important;
+  /* red */
+}
+
+div[data-windows="true"] [aria-label="Close"]:hover::before {
+  opacity: 1;
 }
