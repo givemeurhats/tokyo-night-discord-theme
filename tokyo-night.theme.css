@@ -393,7 +393,7 @@ div[data-windows="true"] [aria-label="Maximize"] {
 
 /* Fix close button theme */
 div[data-windows="true"] [aria-label="Close"] {
-  margin-top: -7px;
+  margin-top: 0px;
   margin-right: -17px;
   position: relative;
 }
