@@ -3,8 +3,8 @@
  * @description A dark Discord theme inspired by Tokyo Night VS Code theme.
  * @author original by refact0r, modified by givemeurhats
  * @version 1.0.0
- * @website https://github.com/ashtrath/Tokyo-Night
- * @source https://github.com/ashtrath/Tokyo-Night
+ * @website https://github.com/givemeurhats/tokyo-night-discord-theme
+ * @source https: //github.com/givemeurhats/tokyo-night-discord-theme
  */
 
 /* import theme modules */
@@ -393,8 +393,8 @@ div[data-windows="true"] [aria-label="Maximize"] {
 
 /* Fix close button theme */
 div[data-windows="true"] [aria-label="Close"] {
-  margin-top: -5px;
-  margin-right: -18px;
+  margin-top: -7px;
+  margin-right: -17px;
   position: relative;
 }
 
@@ -406,21 +406,19 @@ div[data-windows="true"] [aria-label="Close"]::after {
   border-radius: 50%;
   content: "";
   display: block;
-  position: relative;
 }
 
 /* inner dot (black), hidden by default */
 div[data-windows="true"] [aria-label="Close"]::before {
   content: "";
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   background-color: #181925;
   /* black dot */
   border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 12px;
+  left: 12px;
   opacity: 0;
   z-index: 1;
 }
