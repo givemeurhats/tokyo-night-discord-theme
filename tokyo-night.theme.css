@@ -380,9 +380,9 @@ a:hover {
 }
 
 div[data-windows="true"] {
-  height: 12px !important;
+  height: 10px !important;
   /* adjust as needed */
-  min-height: 12px !important;
+  min-height: 10px !important;
 }
 
 /* Hide Minimize and Maximize buttons under the windows container */
@@ -393,42 +393,39 @@ div[data-windows="true"] [aria-label="Maximize"] {
 
 /* Fix close button theme */
 div[data-windows="true"] [aria-label="Close"] {
-  margin-top: 0px;
-  margin-right: -17px;
+  margin-top: -2px;
+  margin-right: -15px;
   position: relative;
 }
 
 div[data-windows="true"] [aria-label="Close"]::after {
-  background-color: #414868 !important;
-  /* default gray circle */
-  width: 11px;
-  height: 11px;
+  background-color: var(--red) !important;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  content: "";
   display: block;
 }
 
-/* inner dot (black), hidden by default */
 div[data-windows="true"] [aria-label="Close"]::before {
-  content: "";
+  content: "×";
   position: absolute;
-  width: 5px;
-  height: 5px;
-  background-color: #181925;
-  /* black dot */
-  border-radius: 50%;
-  top: 12px;
-  left: 12px;
-  opacity: 0;
+  width: 16px;
+  height: 16px;
+  color: #181925;
+  font-weight: bold;
+  font-size: 12px;
+  font-weight: 800;
+  top: 6px;
+  left: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
 }
 
-/* red hover outer + show inner */
-div[data-windows="true"] [aria-label="Close"]:hover::after {
-  background-color: #F7768E !important;
-  /* red */
-}
-
 div[data-windows="true"] [aria-label="Close"]:hover::before {
-  opacity: 1;
+  background-color: var(--background);
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  color: var(--red);
 }
